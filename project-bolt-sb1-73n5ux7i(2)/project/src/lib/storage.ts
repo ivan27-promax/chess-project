@@ -11,5 +11,6 @@ export function writeStoredChoice(key: string, value: string): void {
   try {
     window.localStorage.setItem(key, value);
   } catch {
+    // Storage can be blocked (private browsing); the preference then simply isn't remembered.
   }
 }
